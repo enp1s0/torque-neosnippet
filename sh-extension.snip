@@ -1,0 +1,13 @@
+snippet     torque
+options     head
+	#!/bin/bash
+	#PBS -l select=1:ncpus=1
+	#PBS -N ${2:job_name}
+	#PBS -j oe
+
+    cd ${PBS_O_WORKDIR}
+	. /etc/profile.d/modules.sh
+	# module load cuda ...
+
+	# ./a.out
+	${0}
